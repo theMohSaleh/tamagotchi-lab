@@ -61,6 +61,17 @@
     background-color: #4597f8;
     transition: background-color 2s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
+
+  /* added disable class to be assigned to the buttons when the game is over */
+  .disable {
+    background-color: gray;
+  }
+  .disable:hover {
+    background-color: gray;
+  }
+  .disable:active {
+    background-color: gray;
+  }
   
   button:hover {
     background-color: #3880d7;
@@ -79,4 +90,3 @@
   .hidden {
     visibility: hidden;
   }
-  
