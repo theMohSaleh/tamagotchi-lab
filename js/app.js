@@ -101,36 +101,36 @@ const handleGameBtnClick = (event) => {
         case "feed":
             state.hunger = 0
             break;
-            case "sleep":
-                state.sleepiness = 0
-                break;
-            }
-            // update values displayed
-            render();
-        }
-        
-        const handleResetBtnClick = (event) => {
-            init();
-        }
-        
-        function render() {
-            // display the values of each stat from state object
-            boredomStatEl.textContent = state.boredom;
-            hungerStatEl.textContent = state.hunger;
-            sleepinessStatEl.textContent = state.sleepiness;
-            
-            // if game is over, clear interval and display game over message
-            if (gameOver) {
-                clearInterval(timer);
-                resetBtnEl.classList.remove("hidden");
-                gameMessageEl.classList.remove("hidden");
-                // disable all buttons and make them gray
-                playBtnEl.disabled = true;
-                feedBtnEl.disabled = true;
-                sleepBtnEl.disabled = true;
-                playBtnEl.classList.add("disable");
-                feedBtnEl.classList.add("disable");
-                sleepBtnEl.classList.add("disable");
+        case "sleep":
+            state.sleepiness = 0
+            break;
+    }
+    // update values displayed
+    render();
+}
+
+const handleResetBtnClick = (event) => {
+    init();
+}
+
+function render() {
+    // display the values of each stat from state object
+    boredomStatEl.textContent = state.boredom;
+    hungerStatEl.textContent = state.hunger;
+    sleepinessStatEl.textContent = state.sleepiness;
+
+    // if game is over, clear interval and display game over message
+    if (gameOver) {
+        clearInterval(timer);
+        resetBtnEl.classList.remove("hidden");
+        gameMessageEl.classList.remove("hidden");
+        // disable all buttons and make them gray
+        playBtnEl.disabled = true;
+        feedBtnEl.disabled = true;
+        sleepBtnEl.disabled = true;
+        playBtnEl.classList.add("disable");
+        feedBtnEl.classList.add("disable");
+        sleepBtnEl.classList.add("disable");
     }
 }
 
